@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-//    namespace = "com.lokesh.barcodescanner"
+    namespace = "com.lokesh.barcodescanner"
     compileSdk = 34
 
     defaultConfig {
@@ -55,7 +55,7 @@ dependencies {
 publishing {
     publications {
         create("release", MavenPublication::class) {
-            groupId = "com.github.raolokesh"
+            groupId = "com.lokesh.barcodescanner"
             artifactId = "barcode-scanner"
             version = "1.0.0"
 
