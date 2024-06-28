@@ -1,5 +1,6 @@
 package com.lokesh.qrcodescanner;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -181,7 +182,7 @@ public class MlkitActivity extends AppCompatActivity {
         super.onDestroy();
         cameraExecutor.shutdown();
     }
-
+    @SuppressLint("MissingPermission")
     private void cameraPermission() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             int CAMERA_PERMISSION_CODE = 1;
