@@ -1,4 +1,4 @@
-package com.lokesh.qrcodescanner;
+package com.lokesh.barcodescanner;
 
 public interface ScanningResultListener {
     void onScanned(String result);

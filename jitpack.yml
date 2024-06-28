@@ -1,5 +1,0 @@
-install:
-  - ./gradlew clean assembleRelease
-
-script:
- - ./gradlew :qrCodeScanner:assembleRelease 

@@ -1,4 +1,4 @@
-package com.lokesh.qrcodescanner;
+package com.lokesh.barcodescanner;
 
 import android.content.Context;
 import android.graphics.Canvas;

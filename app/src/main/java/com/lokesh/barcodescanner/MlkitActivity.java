@@ -1,6 +1,5 @@
-package com.lokesh.qrcodescanner;
+package com.lokesh.barcodescanner;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -26,7 +25,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.LifecycleOwner;
 
 import com.google.common.util.concurrent.ListenableFuture;
-import com.lokesh.qrcodescanner.databinding.ActivityMlkitBinding;
+import com.lokesh.barcodescanner.databinding.ActivityMlkitBinding;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -132,15 +131,6 @@ public class MlkitActivity extends AppCompatActivity {
                         resultIntent.putExtra("result", result);
                         setResult(RESULT_OK, resultIntent);
                         finish();
-//                        ScannerResultDialog.newInstance(
-//                                result,
-//                                new ScannerResultDialog.DialogDismissListener() {
-//                                    @Override
-//                                    public void onDismiss() {
-//                                        bindPreview(cameraProvider);
-//                                    }
-//                                }
-//                        ).show(getSupportFragmentManager(), ScannerResultDialog.class.getSimpleName());
                     });
                 }
             };
@@ -182,7 +172,7 @@ public class MlkitActivity extends AppCompatActivity {
         super.onDestroy();
         cameraExecutor.shutdown();
     }
-    @SuppressLint("MissingPermission")
+
     private void cameraPermission() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             int CAMERA_PERMISSION_CODE = 1;

@@ -16,12 +16,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-//        flatDir {
-//            dir("libs")
-//        }
     }
 }
 
 rootProject.name = "Bar code Scanner"
 include(":app")
-include(":qrCodeScanner")

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lokesh.qrcodescanner.MlkitActivity">
+    tools:context=".MlkitActivity">
 
 
     <androidx.camera.view.PreviewView
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.lokesh.qrcodescanner.ViewFinderOverlay
+    <com.lokesh.barcodescanner.ViewFinderOverlay
         android:id="@+id/overlay"
         android:layerType="software"
         android:layout_width="match_parent"
