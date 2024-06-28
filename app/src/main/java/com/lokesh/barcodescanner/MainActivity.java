@@ -12,14 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+//import com.lokesh.qrCodeScanner
 import com.lokesh.barcodescanner.databinding.ActivityMainBinding;
 import com.lokesh.qrcodescanner.MlkitActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private static final int SCAN_REQUEST_CODE = 1001;
 
     private ActivityResultLauncher<Intent> launcher;
 

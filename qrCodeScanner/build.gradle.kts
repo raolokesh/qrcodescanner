@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    id("maven-publish")
 }
 
 android {
@@ -24,6 +25,12 @@ android {
     }
     buildFeatures {
         viewBinding = true
+    }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

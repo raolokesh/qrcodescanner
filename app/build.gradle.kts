@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-    implementation(files("libs/qrCodeScanner.aar"))
+//    implementation(files("libs/qrCodeScanner.aar"))
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -47,12 +47,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(libs.barcode.scanning)
 
-    implementation(libs.camera.camera2)
-    // If you want to additionally use the CameraX Lifecycle library
-    implementation(libs.camera.lifecycle)
-    // If you want to additionally use the CameraX View class
-    implementation(libs.camera.view)
+    implementation(project(":qrCodeScanner"))
+//
+//    implementation(libs.camera.camera2)
+//    // If you want to additionally use the CameraX Lifecycle library
+//    implementation(libs.camera.lifecycle)
+//    // If you want to additionally use the CameraX View class
+//    implementation(libs.camera.view)
+//    implementation(libs.qrcodescanner)
 
 }
