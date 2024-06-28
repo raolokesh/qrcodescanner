@@ -31,8 +31,8 @@ android {
         viewBinding = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
 
@@ -55,6 +55,5 @@ dependencies {
 //    implementation(libs.camera.lifecycle)
 //    // If you want to additionally use the CameraX View class
 //    implementation(libs.camera.view)
-//    implementation(libs.qrcodescanner)
 
 }
