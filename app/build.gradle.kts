@@ -11,7 +11,7 @@ android {
     defaultConfig {
 //        applicationId = "com.lokesh.barcodescanner"
         minSdk = 23
-//        targetSdk = 34
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -55,7 +55,7 @@ dependencies {
 publishing {
     publications {
         create("release", MavenPublication::class) {
-            groupId = "com.lokesh.barcodescanner"
+            groupId = "com.github.raolokesh"
             artifactId = "barcode-scanner"
             version = "1.0.0"
 
