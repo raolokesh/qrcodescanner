@@ -1,30 +1,26 @@
 plugins {
-    alias(libs.plugins.android.library)
+//    alias(libs.plugins.android.library)
+    id("com.android.library")
     id("maven-publish")
 }
 
 android {
-    namespace = "com.lokesh.barcodescanner"
+//    namespace = "com.lokesh.barcodescanner"
     compileSdk = 34
 
     defaultConfig {
 //        applicationId = "com.lokesh.barcodescanner"
         minSdk = 23
-        targetSdk = 34
-//        versionCode = 1
-//        versionName = "1.0"
+//        targetSdk = 34
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     buildFeatures {
@@ -41,7 +37,6 @@ android {
         }
     }
 }
-
 dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -56,4 +51,27 @@ dependencies {
     implementation(libs.camera.lifecycle)
     // If you want to additionally use the CameraX View class
     implementation(libs.camera.view)
+}
+publishing {
+    publications {
+        create("release", MavenPublication::class) {
+            groupId = "com.github.raolokesh"
+            artifactId = "barcode-scanner"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
+
+tasks.register<Jar>("sourcesJar") {
+    archiveClassifier.set("sources")
+    from(android.sourceSets["main"].java.srcDirs)
+}
+
+tasks.register<Jar>("javadocJar") {
+    archiveClassifier.set("javadoc")
+    from(tasks["dokkaJavadoc"])
 }
