@@ -1,7 +1,7 @@
 plugins {
-//    alias(libs.plugins.android.library)
-    id("com.android.library")
-    id("maven-publish")
+    alias(libs.plugins.android.library)
+//    id("com.android.library")
+    `maven-publish`
 }
 
 android {
@@ -52,12 +52,29 @@ dependencies {
     // If you want to additionally use the CameraX View class
     implementation(libs.camera.view)
 }
+
+
+//afterEvaluate{
+//    publishing {
+//        publications {
+//            create("release", MavenPublication::class) {
+//                groupId = "com.github.raolokesh"
+//                artifactId = "barcode-scanner"
+//                version = "1.0.0"
+//
+//                afterEvaluate {
+//                    from(components["release"])
+//                }
+//            }
+//        }
+//    }
+//}
 publishing {
     publications {
         create("release", MavenPublication::class) {
             groupId = "com.github.raolokesh"
             artifactId = "barcode-scanner"
-            version = "1.0.0"
+            version = "1.0.11"
 
             afterEvaluate {
                 from(components["release"])
@@ -66,12 +83,12 @@ publishing {
     }
 }
 
-tasks.register<Jar>("sourcesJar") {
-    archiveClassifier.set("sources")
-    from(android.sourceSets["main"].java.srcDirs)
-}
-
-tasks.register<Jar>("javadocJar") {
-    archiveClassifier.set("javadoc")
-    from(tasks["dokkaJavadoc"])
-}
+//tasks.register<Jar>("sourcesJar") {
+//    archiveClassifier.set("sources")
+//    from(android.sourceSets["main"].java.srcDirs)
+//}
+//
+//tasks.register<Jar>("javadocJar") {
+//    archiveClassifier.set("javadoc")
+//    from(tasks["dokkaJavadoc"])
+//}
